@@ -1,4 +1,4 @@
-import { ADDED, COMPLETE_ALL, CLEAR_COMPLETE, TOGGLED, COLOR_CHANGE, DELETED } from "./actionTypes";
+import {FETCH_TODO, ADDED, COMPLETE_ALL, CLEAR_COMPLETE, TOGGLED, COLOR_CHANGE, DELETED } from "./actionTypes";
 import inistialState from "./inistialSate";
 
 const newId = (todos) => {
@@ -8,6 +8,9 @@ const newId = (todos) => {
 
 const reducer = (state = inistialState, action) => {
     switch (action.type) {
+        case FETCH_TODO: 
+            return action.payload
+
         case ADDED:
             return [
                 ...state,
@@ -15,7 +18,6 @@ const reducer = (state = inistialState, action) => {
                     id: newId(state),
                     text: action.payload,
                     isComplete: false,
-                    // color: 'green'
                 }
             ];
 

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import note from "../../images/notes.png";
 import plus from "../../images/plus.png";
 import { useDispatch } from "react-redux";
-import { added } from "../../redux/todos/action";
+import addTodoThunk from "../../redux/todos/thunks/addTodoThunk";
 
 function Form() {
     const [input, setInput] = useState('');
@@ -16,7 +16,7 @@ function Form() {
     // submit handler 
     const submitHandler = (e) => {
         e.preventDefault();
-        dispatch(added(input));
+        dispatch(addTodoThunk(input));
         setInput('');
     };
     return (

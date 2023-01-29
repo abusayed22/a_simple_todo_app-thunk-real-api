@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { clearCompleted, completeAll } from '../redux/todos/action'
 import Form from './form/Form'
 
+
 function Header_input_todoList() {
   const todos = useSelector((state) => state.todos)
   const fillters = useSelector((state) => state.fillters)
@@ -44,6 +45,8 @@ function Header_input_todoList() {
         return true
     }
   }
+
+  
 
   return (
     <div>

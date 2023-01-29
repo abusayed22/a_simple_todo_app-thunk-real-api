@@ -5,8 +5,15 @@ import {
     COMPLETE_ALL,
     DELETED,
     TOGGLED,
+    FETCH_TODO
 } from './actionTypes'
 
+export const fetchData = (todos) => {
+    return {
+        type: FETCH_TODO,
+        payload: todos
+    }
+}
 export const added = (value) => {
     return {
         type: ADDED,

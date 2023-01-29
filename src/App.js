@@ -1,6 +1,16 @@
+import { useEffect } from "react";
 import Header_input_todoList from "./components/Header_input_todoList";
+import { useDispatch } from "react-redux";
+import fetchTodoThunk from "./redux/todos/thunks/fetchTodoThunk";
+
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchTodoThunk)
+  },[dispatch]);
+  
   return (
     <div className="bg-main_c w-full h-[100vh] flex flex-col item-center">
       {/* nav area*/}
