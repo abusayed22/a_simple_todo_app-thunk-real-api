@@ -11,8 +11,8 @@ function Footer() {
   const { stataus, color } = fillters
 
   // how much number of task
-  const number_of_task = todos.filter((fillter) => !fillter.isComplete).length
-
+  const number_of_task = todos.filter((fillter) => !fillter.isCompleted).length
+  
   // how much task due
   const person = (number_of_task) => {
     switch (number_of_task) {

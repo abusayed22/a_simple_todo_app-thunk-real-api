@@ -17,7 +17,7 @@ const reducer = (state = inistialState, action) => {
                 {
                     id: newId(state),
                     text: action.payload,
-                    isComplete: false,
+                    isCompleted: false,
                 }
             ];
 
@@ -25,13 +25,13 @@ const reducer = (state = inistialState, action) => {
             return state.map(todo => {
                 return {
                     ...todo,
-                    isComplete: true
+                    isCompleted: true
                 };
             })
 
 
         case CLEAR_COMPLETE:
-            return state.filter(todo => !todo.isComplete);
+            return state.filter(todo => !todo.isCompleted);
 
         case TOGGLED:
             return state.map(todo => {
@@ -40,7 +40,7 @@ const reducer = (state = inistialState, action) => {
                 };
                 return {
                     ...todo,
-                    isComplete: !todo.isComplete
+                    isCompleted: !todo.isCompleted
                 };
             });
 
